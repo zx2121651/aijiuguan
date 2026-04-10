@@ -1,6 +1,8 @@
 import TopAppBar from '../components/TopAppBar';
 import BottomNavBar from '../components/BottomNavBar';
 import CharacterCard from '../components/CharacterCard';
+import CategoryFilter from '../components/CategoryFilter';
+import RecentChats from '../components/RecentChats';
 
 const CHARACTERS = [
   {
@@ -35,15 +37,18 @@ export default function Home() {
       <TopAppBar title="AI 酒馆" />
 
       <main className="relative z-10 pt-20 px-4 max-w-2xl mx-auto">
-        <section className="mb-10 mt-4">
+        <section className="mb-6 mt-4">
           <h2 className="text-4xl font-headline font-extrabold tracking-tight mb-2">
             <span className="text-on-surface">欢迎来到</span><br/>
             <span className="text-primary">霓虹酒馆</span>
           </h2>
-          <p className="text-on-surface-variant font-body">选一个空位坐下，每一杯酒都有一个故事。</p>
+          <p className="text-on-surface-variant font-body">选一个空位坐下，每一杯酒都是一个AI的灵魂。</p>
         </section>
 
-        <div className="grid grid-cols-1 gap-8">
+        <RecentChats />
+        <CategoryFilter />
+
+        <div className="grid grid-cols-1 gap-8 mt-4">
           {CHARACTERS.map(char => (
             <CharacterCard key={char.id} {...char} />
           ))}
