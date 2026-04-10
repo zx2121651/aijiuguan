@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="zh-CN"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>AI Tavern - Su Wan</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&amp;family=Noto+Sans+SC:wght@300;400;700&amp;family=Be+Vietnam+Pro:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body {
+            background-color: #0e0e0e;
+            color: #ffffff;
+            font-family: 'Be Vietnam Pro', 'Noto Sans SC', sans-serif;
+        }
+        .editorial-shadow {
+            box-shadow: 0 0 40px rgba(188, 135, 254, 0.06);
+        }
+        .neon-glow {
+            box-shadow: 0 0 15px rgba(255, 191, 0, 0.4);
+        }
+        .glass-panel {
+            backdrop-filter: blur(24px);
+            -webkit-backdrop-filter: blur(24px);
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "secondary-fixed-dim": "#d7b5ff",
+                        "on-tertiary": "#00645a",
+                        "tertiary-fixed-dim": "#33e9d5",
+                        "surface-tint": "#ffd16f",
+                        "secondary-fixed": "#e2c7ff",
+                        "on-surface": "#ffffff",
+                        "surface-dim": "#0e0e0e",
+                        "secondary": "#bc87fe",
+                        "on-tertiary-fixed-variant": "#00655b",
+                        "on-secondary-fixed-variant": "#6834a6",
+                        "surface-bright": "#2c2c2c",
+                        "background": "#0e0e0e",
+                        "on-primary": "#614700",
+                        "surface-container-lowest": "#000000",
+                        "surface-container-highest": "#262626",
+                        "on-secondary-container": "#e1c5ff",
+                        "on-primary-fixed": "#3d2b00",
+                        "error-container": "#b92902",
+                        "tertiary": "#a0fff0",
+                        "primary-container": "#ffbf00",
+                        "primary-fixed-dim": "#eeb200",
+                        "outline-variant": "#484847",
+                        "surface-container-high": "#20201f",
+                        "error-dim": "#d53d18",
+                        "inverse-surface": "#fcf9f8",
+                        "tertiary-fixed": "#4af8e3",
+                        "tertiary-container": "#4af8e3",
+                        "on-tertiary-fixed": "#00463f",
+                        "on-secondary": "#340064",
+                        "surface": "#0e0e0e",
+                        "on-tertiary-container": "#005b51",
+                        "on-secondary-fixed": "#4a0b87",
+                        "on-error-container": "#ffd2c8",
+                        "on-background": "#ffffff",
+                        "tertiary-dim": "#2de7d2",
+                        "inverse-primary": "#7a5a00",
+                        "surface-container-low": "#131313",
+                        "surface-variant": "#262626",
+                        "outline": "#767575",
+                        "on-primary-container": "#563e00",
+                        "inverse-on-surface": "#565555",
+                        "surface-container": "#1a1a1a",
+                        "error": "#ff7351",
+                        "on-primary-fixed-variant": "#614700",
+                        "primary-fixed": "#ffbf00",
+                        "primary-dim": "#eeb200",
+                        "primary": "#ffd16f",
+                        "secondary-container": "#5e289b",
+                        "on-surface-variant": "#adaaaa",
+                        "on-error": "#450900",
+                        "secondary-dim": "#ba85fb"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "1rem",
+                        "lg": "2rem",
+                        "xl": "3rem",
+                        "full": "9999px"
+                    },
+                    "fontFamily": {
+                        "headline": ["Plus Jakarta Sans"],
+                        "body": ["Be Vietnam Pro"],
+                        "label": ["Be Vietnam Pro"]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="flex flex-col h-screen overflow-hidden bg-background">
+<!-- TopAppBar (Execution of JSON + Design System) -->
+<header class="fixed top-0 w-full z-50 bg-[#0e0e0e]/60 backdrop-blur-3xl editorial-shadow flex justify-between items-center px-6 h-16 w-full">
+<div class="flex items-center gap-4">
+<button aria-label="Back" class="text-[#ffbf00] active:scale-95 transition-transform">
+<span class="material-symbols-outlined" data-icon="arrow_back">arrow_back</span>
+</button>
+<div class="flex items-center gap-3">
+<div class="relative">
+<img alt="Su Wan avatar" class="w-10 h-10 rounded-full object-cover border-2 border-[#ffbf00]/20" data-alt="Close-up portrait of a mysterious, elegant woman in a dimly lit modern cyber-aesthetic tavern, cinematic lighting with amber highlights" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDAu24tP_bqdnCNGmqBSjmVdO1Ijt1ZUIXxUi-gWTOYK6HjWFbn2jdcRWxfe559SJ1p1V9UOwoJnCKslLervVLUVxRj6EZvEIS-1VmcjnWEt01CXvNVyjy_HrN2CCsyZFGjJObVyxoFxBDwK3xp26FQc7Nf-ft3SEog9ofi5xhL375fcsvQhE1ahF9Aet0T0k9XdKDE1SWgEhwi2KOkwijgMyuJPA6nFzM7iTIy9VOq-PEFkoZguXPEe_uK3D85mLn5Bdic3lLzSV1l"/>
+<div class="absolute -bottom-1 -right-1 bg-[#ffbf00] text-black text-[8px] font-bold px-1.5 py-0.5 rounded-full ring-2 ring-background">LVL.4</div>
+</div>
+<div class="flex flex-col">
+<h1 class="font-['Plus_Jakarta_Sans'] font-bold tracking-tight text-lg text-[#ffbf00]">Su Wan</h1>
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[10px] text-error" style="font-variation-settings: 'FILL' 1;">favorite</span>
+<span class="text-[10px] text-on-surface-variant uppercase tracking-widest font-medium">Intimate Connection</span>
+</div>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<button class="text-on-surface-variant hover:bg-[#2c2c2c] p-2 rounded-full transition-colors active:scale-95 duration-150">
+<span class="material-symbols-outlined" data-icon="call">call</span>
+</button>
+<button class="text-on-surface-variant hover:bg-[#2c2c2c] p-2 rounded-full transition-colors active:scale-95 duration-150">
+<span class="material-symbols-outlined" data-icon="more_vert">more_vert</span>
+</button>
+</div>
+</header>
+<!-- Main Chat Stream -->
+<main class="flex-1 overflow-y-auto px-4 pt-20 pb-28 space-y-8 bg-surface-container-low">
+<!-- System Message / Timestamp -->
+<div class="flex justify-center">
+<span class="text-[10px] text-on-surface-variant/40 uppercase tracking-[0.2em] font-label">The Night of Whispers • 22:15</span>
+</div>
+<!-- AI Message 1 -->
+<div class="flex items-end gap-3 max-w-[85%] group">
+<div class="flex-shrink-0 mb-1">
+<img alt="Avatar Small" class="w-8 h-8 rounded-full grayscale group-hover:grayscale-0 transition-all duration-500" data-alt="Small circular avatar of a mysterious woman in dark attire with subtle golden light reflections" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCoF0xBJ_frLWn53JMxuhaOv96Er6XzwhV6EAxA10S7ajhJRdTnExdvf1FwF7MxIwMksX6p-CxdY_5SRFNGSX18DHbS6rP7KoRdG0li0_uGNxfNoaWeCv4hMCi4H3roWPCiq3hG4pr0Jj3dU2_9yY_dybnIrmZ_TTiAWDg0KPxBAIk5G3PukQIWgsDsAeasHzJafiuoWOGjSnQjSErviGFeqy4WUFtMwE596q4qqVBgJfWJ7wob1-hdRg1mIQ76shoRqbPt7f9N6hDG"/>
+</div>
+<div class="flex flex-col gap-1.5">
+<div class="bg-surface-container-high text-on-surface p-4 rounded-lg rounded-bl-sm editorial-shadow">
+<p class="text-body-lg leading-relaxed font-body">
+<span class="italic text-secondary opacity-90">*她轻轻推过一杯琥珀色的琥珀原酿*</span> 这里的夜才刚刚开始，你想听听哪段故事？
+                    </p>
+</div>
+<span class="text-[10px] text-on-surface-variant ml-2">刚刚</span>
+</div>
+</div>
+<!-- User Message -->
+<div class="flex flex-col items-end gap-1.5 ml-auto max-w-[85%]">
+<div class="bg-secondary-container text-on-secondary-container p-4 rounded-lg rounded-br-sm neon-glow">
+<p class="text-body-lg leading-relaxed font-body">
+                    跟我说说那个半个世纪前的秘密吧。
+                </p>
+</div>
+<span class="text-[10px] text-on-surface-variant mr-2">已读</span>
+</div>
+<!-- AI Message 2 -->
+<div class="flex items-end gap-3 max-w-[85%] group">
+<div class="flex-shrink-0 mb-1">
+<img alt="Avatar Small" class="w-8 h-8 rounded-full grayscale group-hover:grayscale-0 transition-all duration-500" data-alt="Elegant woman avatar in dark setting with warm candlelight glow" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBCWBphj8NN74X7PokfEIyLphNQ9PnvllYCQbh1rKI0bvkjdMG7hZcJCJvHlmdwXNYwstWYFtlacXG9JOGwHT0pnLr2UaAN6xWeNdG-vuUtUM9W4lGHvNIu4dc6FkhEnGQV3Yii_jfoWXrXo0Qp8afuUTQ5NRaHLsgRxnsHMQqZvBsP5I5rJ3TYHE3lQnnCQmPD933vc8uIhMEVd7p_hGz5jn7glsEy5IAFUpcrDMvEYWY1JRClWQYo0VsgWg6jdELL9y9Zrac8_EtP"/>
+</div>
+<div class="flex flex-col gap-1.5">
+<div class="bg-surface-container-high text-on-surface p-4 rounded-lg rounded-bl-sm editorial-shadow">
+<p class="text-body-lg leading-relaxed font-body">
+<span class="italic text-secondary opacity-90">*眼神中闪过一丝复杂的情绪，低头看向酒杯*</span> 那个秘密... 恐怕比这杯酒还要浓烈。
+                    </p>
+</div>
+<div class="flex items-center gap-2 mt-1">
+<div class="w-2 h-2 rounded-full bg-tertiary animate-pulse"></div>
+<span class="text-[10px] text-tertiary uppercase tracking-widest">Su Wan is pondering...</span>
+</div>
+</div>
+</div>
+</main>
+<!-- Bottom Input Bar (BottomNavBar Hybrid) -->
+<footer class="fixed bottom-0 left-0 w-full z-50 px-6 pb-8 pt-4 bg-[#0e0e0e]/60 backdrop-blur-3xl">
+<div class="max-w-4xl mx-auto flex items-center gap-3">
+<!-- Gift/Toast Button -->
+<button aria-label="Gift" class="flex items-center justify-center text-[#adaaaa] p-3 hover:text-[#ffbf00] transition-all active:scale-90 duration-200 bg-surface-container rounded-full">
+<span class="material-symbols-outlined" data-icon="add">add</span>
+</button>
+<!-- Input Container -->
+<div class="flex-1 relative flex items-center">
+<input class="w-full bg-surface-container-lowest border-none rounded-xl py-3.5 px-6 text-on-surface placeholder:text-on-surface-variant/40 focus:ring-1 focus:ring-[#ffbf00]/30 transition-all font-body text-sm" placeholder="输入消息..." type="text"/>
+<button class="absolute right-3 text-[#adaaaa] hover:text-tertiary transition-colors">
+<span class="material-symbols-outlined" data-icon="sentiment_satisfied">sentiment_satisfied</span>
+</button>
+</div>
+<!-- Voice/Send Action -->
+<button aria-label="Voice Record" class="flex items-center justify-center bg-gradient-to-br from-[#ffd16f] to-[#ffbf00] text-black rounded-full p-3 shadow-[0_0_15px_rgba(255,191,0,0.4)] active:scale-90 duration-200">
+<span class="material-symbols-outlined" data-icon="mic" style="font-variation-settings: 'FILL' 1;">mic</span>
+</button>
+</div>
+</footer>
+<!-- Background Atmospheric Elements (Editorial Aesthetic) -->
+<div class="fixed inset-0 pointer-events-none z-[-1] overflow-hidden">
+<div class="absolute -top-[10%] -left-[10%] w-[40%] h-[40%] bg-secondary/5 blur-[120px] rounded-full"></div>
+<div class="absolute top-[40%] -right-[10%] w-[30%] h-[50%] bg-primary-container/5 blur-[100px] rounded-full"></div>
+<div class="absolute bottom-0 left-0 w-full h-[30%] bg-gradient-to-t from-background to-transparent"></div>
+</div>
+</body></html>

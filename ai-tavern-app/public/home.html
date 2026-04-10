@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="zh-CN"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&amp;family=Noto+Sans+SC:wght@400;500;700&amp;family=Be+Vietnam+Pro:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "secondary-dim": "#ba85fb",
+                    "error-container": "#b92902",
+                    "surface-container-lowest": "#000000",
+                    "surface-variant": "#262626",
+                    "inverse-surface": "#fcf9f8",
+                    "on-primary": "#614700",
+                    "on-secondary-fixed": "#4a0b87",
+                    "on-tertiary": "#00645a",
+                    "primary": "#ffd16f",
+                    "inverse-primary": "#7a5a00",
+                    "background": "#0e0e0e",
+                    "error-dim": "#d53d18",
+                    "outline-variant": "#484847",
+                    "tertiary": "#a0fff0",
+                    "on-tertiary-fixed-variant": "#00655b",
+                    "surface-dim": "#0e0e0e",
+                    "surface-container-high": "#20201f",
+                    "primary-dim": "#eeb200",
+                    "on-secondary-container": "#e1c5ff",
+                    "on-secondary-fixed-variant": "#6834a6",
+                    "on-primary-container": "#563e00",
+                    "on-error-container": "#ffd2c8",
+                    "on-surface": "#ffffff",
+                    "surface-tint": "#ffd16f",
+                    "surface-bright": "#2c2c2c",
+                    "primary-container": "#ffbf00",
+                    "surface-container": "#1a1a1a",
+                    "tertiary-container": "#4af8e3",
+                    "secondary": "#bc87fe",
+                    "primary-fixed": "#ffbf00",
+                    "tertiary-dim": "#2de7d2",
+                    "on-error": "#450900",
+                    "secondary-container": "#5e289b",
+                    "error": "#ff7351",
+                    "on-background": "#ffffff",
+                    "tertiary-fixed": "#4af8e3",
+                    "on-secondary": "#340064",
+                    "surface-container-highest": "#262626",
+                    "on-tertiary-fixed": "#00463f",
+                    "on-primary-fixed-variant": "#614700",
+                    "inverse-on-surface": "#565555",
+                    "on-primary-fixed": "#3d2b00",
+                    "secondary-fixed": "#e2c7ff",
+                    "outline": "#767575",
+                    "on-tertiary-container": "#005b51",
+                    "surface-container-low": "#131313",
+                    "on-surface-variant": "#adaaaa",
+                    "tertiary-fixed-dim": "#33e9d5",
+                    "primary-fixed-dim": "#eeb200",
+                    "secondary-fixed-dim": "#d7b5ff",
+                    "surface": "#0e0e0e"
+            },
+            "borderRadius": {
+                    "DEFAULT": "1rem",
+                    "lg": "2rem",
+                    "xl": "3rem",
+                    "full": "9999px"
+            },
+            "fontFamily": {
+                    "headline": ["Plus Jakarta Sans", "Noto Sans SC"],
+                    "body": ["Be Vietnam Pro", "Noto Sans SC"],
+                    "label": ["Be Vietnam Pro", "Noto Sans SC"]
+            }
+          },
+        },
+      }
+    </script>
+<style>body {
+    background-color: #0e0e0e;
+    color: #fff;
+    font-family: "Be Vietnam Pro", "Noto Sans SC", sans-serif;
+    -webkit-font-smoothing: antialiased
+    }
+.glass-nav {
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px)
+    }
+.grain-overlay {
+    background-image: url(https://lh3.googleusercontent.com/aida-public/AB6AXuCVeCQLdEDLtnxgnlNtEONeqEVhGQuCu14orZYUKXObtC5M3hM87EXFKMfOK3DWPtNoQKbZU6ZWmR9lUsel2H6FornyVGjzEeZqVUiGkiJkpHVVucGqcD8D3yuCmniG9bdDVaH5SWb1mSxxVNuF02ztZhKEmliPJOOf_RmvfObFOfy2AdvRoPqYqxCmA8qGdBYyhfopudmx83ox6-oNFzOC4jCwCynwnsYunZnuyk03QlSjcCu_wav7iS5-4bkhRUg3NXKfnU5fDi_H);
+    opacity: 0.05;
+    pointer-events: none
+    }
+.material-symbols-outlined {
+    font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 24
+    }
+.neon-shadow {
+    box-shadow: 0 0 30px rgba(188, 135, 254, 0.1)
+    }
+.card-gradient {
+    background: linear-gradient(to top, rgba(14, 14, 14, 0.95) 0%, rgba(14, 14, 14, 0.4) 50%, transparent 100%)
+    }</style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background min-h-screen pb-32">
+<div class="fixed inset-0 grain-overlay z-0"></div>
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 bg-[#0e0e0e]/60 backdrop-blur-3xl shadow-[0_4px_30px_rgba(0,0,0,0.5)]">
+<div class="flex justify-between items-center px-6 h-16 w-full">
+<button class="p-2 text-[#adaaaa] hover:bg-white/10 transition-colors active:scale-95 duration-200 rounded-full">
+<span class="material-symbols-outlined" data-icon="menu">menu</span>
+</button>
+<h1 class="font-['Plus_Jakarta_Sans'] font-bold tracking-tighter text-2xl text-[#FFBF00] drop-shadow-[0_0_10px_rgba(255,191,0,0.4)]">AI 酒馆</h1>
+<button class="p-2 text-[#adaaaa] hover:bg-white/10 transition-colors active:scale-95 duration-200 rounded-full">
+<span class="material-symbols-outlined" data-icon="search">search</span>
+</button>
+</div>
+</header>
+<!-- Main Content: Tavern Hall -->
+<main class="relative z-10 pt-20 px-4 max-w-2xl mx-auto">
+<!-- Hero Welcome (Editorial Style) -->
+<section class="mb-10 mt-4">
+<h2 class="text-4xl font-headline font-extrabold tracking-tight mb-2">
+<span class="text-on-surface">欢迎来到</span><br/>
+<span class="text-primary">霓虹酒馆</span>
+</h2>
+<p class="text-on-surface-variant font-body">选一个空位坐下，每一杯酒都有一个故事。</p>
+</section>
+<!-- Character Grid / Waterfall -->
+<div class="grid grid-cols-1 gap-8">
+<!-- Character Card 1 -->
+<article class="relative group overflow-hidden rounded-xl bg-surface-container border border-outline-variant/15 neon-shadow h-[480px]">
+<img alt="" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="cinematic portrait of a handsome male mixologist in a dark upscale bar, soft amber lighting, focused gaze, elegant vest" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAtO2zLW7xynLaTL3G0ae8Zg4LR3nBiVwcuM4jkDNXHGAIyetkIxvxtqoyRihuTDo1LaMfG5gZar0xEuBerbS5Jz--WbGy8bu32lqlubumo9YGghCnAtHgPPGeaJvtcOx3thH-qr5A4SPb8vzsbxE1h9uEt-2HDCmXg43zRrwXT1LBbLRuUGCe5P-OyuJSUQrK0oiRtHR56aNxsLscywJheuJHExL7lXRw4KTI0RmtAahKp5x1O6btqdAsZwz5yjexqyLqpfAKuOLbD"/>
+<div class="absolute inset-0 card-gradient"></div>
+<div class="absolute bottom-0 left-0 right-0 p-8 flex flex-col items-start">
+<div class="flex gap-2 mb-4">
+<span class="px-3 py-1 bg-primary/20 text-primary border border-primary/30 rounded-full text-xs font-bold uppercase tracking-wider">温柔</span>
+<span class="px-3 py-1 bg-tertiary/20 text-tertiary border border-tertiary/30 rounded-full text-xs font-bold uppercase tracking-wider">博学</span>
+</div>
+<h3 class="text-3xl font-headline font-bold text-white mb-2">黎明 (Li Ming)</h3>
+<p class="text-on-surface-variant font-body text-lg mb-6 leading-relaxed italic">“今晚想喝点什么？特调的‘午夜雨滴’，或许能洗刷你的烦恼。”</p>
+<button class="w-full py-4 bg-gradient-to-br from-[#ffd16f] to-[#ffbf00] text-[#0e0e0e] rounded-full font-bold text-lg shadow-[0_0_20px_rgba(255,191,0,0.3)] active:scale-95 transition-transform">
+                        与之对饮
+                    </button>
+</div>
+</article>
+<!-- Character Card 2 -->
+<article class="relative group overflow-hidden rounded-xl bg-surface-container border border-outline-variant/15 neon-shadow h-[480px]">
+<img alt="" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="mysterious woman in an elegant dark silk cheongsam sitting in a dimly lit oriental lounge with neon red accents" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA4cCpshjEfihlC6Q8cTYnISof782tkFPKsjy_Ij6N_DihmJAZ4ZmntNLAWM1qgEvrT21qGMpzJShKCRUC0a4SDPaM5jbYSCsufMpU83l1t5BFq0PRtg5NDTn9y245UdNPA9ufvtneiCIs1Bjsqpyhw3OKJ4EwAWjlsy7HQ5zsoGZQlBbMaQ14mVlw0ZIusBGo2wAQ-3FMh7TZDu_udfaYfEqn2t9FZPzeJdb49TU4dwAo3eIzfpb4UCVTU1eMIgTJzGuRU7Q635WMn"/>
+<div class="absolute inset-0 card-gradient"></div>
+<div class="absolute bottom-0 left-0 right-0 p-8 flex flex-col items-start">
+<div class="flex gap-2 mb-4">
+<span class="px-3 py-1 bg-secondary/20 text-secondary border border-secondary/30 rounded-full text-xs font-bold uppercase tracking-wider">神秘</span>
+<span class="px-3 py-1 bg-error/20 text-error border border-error/30 rounded-full text-xs font-bold uppercase tracking-wider">高冷</span>
+</div>
+<h3 class="text-3xl font-headline font-bold text-white mb-2">苏婉 (Su Wan)</h3>
+<p class="text-on-surface-variant font-body text-lg mb-6 leading-relaxed italic">“这里的秘密，只在午夜开启。你，准备好交换你的故事了吗？”</p>
+<button class="w-full py-4 bg-gradient-to-br from-[#ffd16f] to-[#ffbf00] text-[#0e0e0e] rounded-full font-bold text-lg shadow-[0_0_20px_rgba(255,191,0,0.3)] active:scale-95 transition-transform">
+                        探寻秘密
+                    </button>
+</div>
+</article>
+<!-- Character Card 3 -->
+<article class="relative group overflow-hidden rounded-xl bg-surface-container border border-outline-variant/15 neon-shadow h-[480px]">
+<img alt="" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="cool young man in techwear hoodie sitting with glowing futuristic headphones in a cyberpunk cafe with neon teal lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDQooRWuBsfTCWOgMzDzH92h-ja8Nc42f6H559_N2FBAyJku1V2VUq9_-Rns0G4C-XVahjz3LFtbDQeC0IDl5yEB9qu_gHdKYUFUmFNrYymM1sX0wdyLiSDO9V3caHmRAt4yo4HKpPLLamcqRSPQqsHhflIFaYIdEdlzoZfhB0quqUJWfq1r4UhVnrdFachTbIdCwc8wilTIbolHSHqAFT1Z4O5AmqEKwwufCseg8mXjvJS5rYEcHSAQMB4TICX_EVGouRIIHU_SnLu"/>
+<div class="absolute inset-0 card-gradient"></div>
+<div class="absolute bottom-0 left-0 right-0 p-8 flex flex-col items-start">
+<div class="flex gap-2 mb-4">
+<span class="px-3 py-1 bg-tertiary/20 text-tertiary border border-tertiary/30 rounded-full text-xs font-bold uppercase tracking-wider">幽默</span>
+<span class="px-3 py-1 bg-primary/20 text-primary border border-primary/30 rounded-full text-xs font-bold uppercase tracking-wider">黑客</span>
+</div>
+<h3 class="text-3xl font-headline font-bold text-white mb-2">阿杰 (A-Jay)</h3>
+<p class="text-on-surface-variant font-body text-lg mb-6 leading-relaxed italic">“我的算法告诉我，我们今晚会有不少共同话题。”</p>
+<button class="w-full py-4 bg-gradient-to-br from-[#ffd16f] to-[#ffbf00] text-[#0e0e0e] rounded-full font-bold text-lg shadow-[0_0_20px_rgba(255,191,0,0.3)] active:scale-95 transition-transform">
+                        接入频道
+                    </button>
+</div>
+</article>
+</div>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 w-full z-50 bg-[#0e0e0e]/60 backdrop-blur-3xl rounded-t-[3rem] shadow-[0_-10px_40px_rgba(188,135,254,0.06)]">
+<div class="flex justify-around items-center px-4 pb-6 pt-3">
+<!-- Active Tab: 大厅 -->
+<a class="flex flex-col items-center justify-center bg-gradient-to-br from-[#ffd16f] to-[#ffbf00] text-[#0e0e0e] rounded-full px-6 py-2 shadow-[0_0_15px_rgba(255,191,0,0.5)] transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="home" style="font-variation-settings: 'FILL' 1;">home</span>
+<span class="font-['Plus_Jakarta_Sans'] text-xs font-semibold">大厅</span>
+</a>
+<!-- Inactive Tab: 消息 -->
+<a class="flex flex-col items-center justify-center text-[#adaaaa] px-6 py-2 hover:text-white transition-all active:scale-90" href="#">
+<span class="material-symbols-outlined" data-icon="chat_bubble">chat_bubble</span>
+<span class="font-['Plus_Jakarta_Sans'] text-xs font-semibold">消息</span>
+</a>
+<!-- Inactive Tab: 我的 -->
+<a class="flex flex-col items-center justify-center text-[#adaaaa] px-6 py-2 hover:text-white transition-all active:scale-90" href="#">
+<span class="material-symbols-outlined" data-icon="person">person</span>
+<span class="font-['Plus_Jakarta_Sans'] text-xs font-semibold">我的</span>
+</a>
+</div>
+</nav>
+</body></html>
